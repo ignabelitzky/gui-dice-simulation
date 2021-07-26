@@ -6,21 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>449</width>
-    <height>269</height>
+    <width>300</width>
+    <height>300</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Dice Simulator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="outputLabel">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>50</y>
-      <width>211</width>
-      <height>61</height>
+      <x>60</x>
+      <y>30</y>
+      <width>180</width>
+      <height>180</height>
      </rect>
     </property>
     <property name="font">
@@ -28,19 +34,40 @@
       <pointsize>30</pointsize>
      </font>
     </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
     <property name="text">
-     <string/>
+     <string notr="true"/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>160</y>
-      <width>221</width>
+      <x>50</x>
+      <y>240</y>
+      <width>200</width>
       <height>27</height>
      </rect>
     </property>
@@ -48,16 +75,48 @@
      <string>Generate random number</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>449</width>
-     <height>24</height>
-    </rect>
-   </property>
+   <widget class="QLabel" name="ouputLabelFrame">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>20</y>
+      <width>200</width>
+      <height>200</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+     </font>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="text">
+     <string notr="true"/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
+    </property>
+   </widget>
+   <zorder>pushButton</zorder>
+   <zorder>ouputLabelFrame</zorder>
+   <zorder>outputLabel</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -29,12 +29,43 @@ static int generateRandomNumber()
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete diceOne;
+    delete diceTwo;
+    delete diceThree;
+    delete diceFour;
+    delete diceFive;
+    delete diceSix;
 }
 
 
 void MainWindow::on_pushButton_clicked()
 {
     int rndNumber = generateRandomNumber();
-    ui->outputLabel->setText(QString::number(rndNumber));
+    QLabel * dice = ui->outputLabel;
+    switch(rndNumber) {
+    case 1:
+        dice->setPixmap(*diceOne);
+        break;
+    case 2:
+        dice->setPixmap(*diceTwo);
+        break;
+    case 3:
+        dice->setPixmap(*diceThree);
+        break;
+    case 4:
+        dice->setPixmap(*diceFour);
+        break;
+    case 5:
+        dice->setPixmap(*diceFive);
+        break;
+    case 6:
+        dice->setPixmap(*diceSix);
+        break;
+    default:
+        dice->setText("Bad number generated.");
+        break;
+    }
+    ui->outputLabel->mask();
+    ui->outputLabel->show();
 }
 

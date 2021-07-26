@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <chrono>
 #include <random>
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,5 +23,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QPixmap *diceOne = new QPixmap(":/images/diceOne.png");
+    QPixmap *diceTwo = new QPixmap(":/images/diceTwo.png");
+    QPixmap *diceThree = new QPixmap(":/images/diceThree.png");
+    QPixmap *diceFour = new QPixmap(":/images/diceFour.png");
+    QPixmap *diceFive = new QPixmap(":/images/diceFive.png");
+    QPixmap *diceSix = new QPixmap(":/images/diceSix.png");
 };
 #endif // MAINWINDOW_H
