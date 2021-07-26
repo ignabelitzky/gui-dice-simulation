@@ -16,15 +16,43 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>300</width>
+    <height>300</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Dice Simulator</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color: #E6E6FA;
+}
+
+QPushButton {
+	border: 1.5px solid black;
+	border-radius: 10px;
+	background-color: #FAFAD2;
+}
+
+QPushButton:pressed {
+	background-color: #FFEFD5;
+}
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="outputLabel">
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>30</y>
+      <y>25</y>
       <width>180</width>
       <height>180</height>
      </rect>
@@ -66,20 +94,23 @@
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>240</y>
+      <y>230</y>
       <width>200</width>
       <height>27</height>
      </rect>
     </property>
     <property name="text">
-     <string>Generate random number</string>
+     <string>Roll the dice...</string>
     </property>
    </widget>
    <widget class="QLabel" name="ouputLabelFrame">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>20</y>
+      <y>15</y>
       <width>200</width>
       <height>200</height>
      </rect>
@@ -91,6 +122,11 @@
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-radius: 30px;
+background-color: #FAFAD2;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Panel</enum>
@@ -118,7 +154,28 @@
    <zorder>ouputLabelFrame</zorder>
    <zorder>outputLabel</zorder>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>300</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionLicense"/>
+   </widget>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionLicense">
+   <property name="text">
+    <string>About Dice Simulator</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

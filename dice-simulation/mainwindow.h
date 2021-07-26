@@ -5,6 +5,7 @@
 #include <chrono>
 #include <random>
 #include <QPixmap>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,6 +21,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_actionLicense_triggered();
 
 private:
     Ui::MainWindow *ui;

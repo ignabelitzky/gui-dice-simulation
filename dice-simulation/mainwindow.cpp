@@ -69,3 +69,13 @@ void MainWindow::on_pushButton_clicked()
     ui->outputLabel->show();
 }
 
+
+void MainWindow::on_actionLicense_triggered()
+{
+    QString developer("Created by Ignacio Belitzky");
+    QString license("License\nGNU Lesser General Public License v2.1");
+    QString title("About Dice Simulator");
+    QString information(license + "\n\n" + developer);
+    QMessageBox::information(this, title, information);
+}
+
