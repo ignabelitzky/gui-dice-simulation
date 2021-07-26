@@ -2,8 +2,8 @@
 Six number dice simulator
 
 ## TODO
-- Change number for image of the number generated
-- Lock windows size
+- Change windows icon (adding icon to resource.qrc)
+- Add screenshots of the app on the README.md
 
 ## Contributing
 This piece of software is far for complete so pull requests are welcome. For major changes, please open an issue first to discuss what you wold like to change.
