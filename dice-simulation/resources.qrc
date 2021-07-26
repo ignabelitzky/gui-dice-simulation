@@ -6,5 +6,6 @@
         <file>images/diceSix.png</file>
         <file>images/diceThree.png</file>
         <file>images/diceTwo.png</file>
+        <file>images/dices_icon.png</file>
     </qresource>
 </RCC>

@@ -31,15 +31,13 @@
   <property name="windowTitle">
    <string>Dice Simulator</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/dices_icon.png</normaloff>:/images/dices_icon.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
 	background-color: #E6E6FA;
-}
-
-QPushButton {
-	border: 1.5px solid black;
-	border-radius: 10px;
-	background-color: #FAFAD2;
 }
 
 QPushButton:pressed {
@@ -94,13 +92,26 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>230</y>
+      <y>226</y>
       <width>200</width>
-      <height>27</height>
+      <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Carlito</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1.5px solid black;
+border-radius: 10px;
+background-color: #FAFAD2;</string>
+    </property>
     <property name="text">
-     <string>Roll the dice...</string>
+     <string>ROLL THE DICE</string>
     </property>
    </widget>
    <widget class="QLabel" name="ouputLabelFrame">
@@ -177,6 +188,9 @@ background-color: #FAFAD2;</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

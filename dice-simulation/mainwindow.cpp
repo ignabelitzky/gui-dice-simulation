@@ -65,17 +65,18 @@ void MainWindow::on_pushButton_clicked()
         dice->setText("Bad number generated.");
         break;
     }
-    ui->outputLabel->mask();
     ui->outputLabel->show();
 }
 
 
 void MainWindow::on_actionLicense_triggered()
 {
-    QString developer("Created by Ignacio Belitzky");
-    QString license("License\nGNU Lesser General Public License v2.1");
+    QMessageBox msgBox;
+    QString information("<center><b>License</b><br>GNU Lesser General Public License v2.1<br><br><b>Created by</b><br>Ignacio Belitzky</center>");
     QString title("About Dice Simulator");
-    QString information(license + "\n\n" + developer);
-    QMessageBox::information(this, title, information);
+    msgBox.setText(information);
+    msgBox.setWindowTitle(title);
+    msgBox.addButton(QMessageBox::Ok);
+    msgBox.exec();
 }
 
