@@ -1,14 +1,21 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QThread>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    diceFaces[0] = new QPixmap(":/images/diceOne.png");
+    diceFaces[1] = new QPixmap(":/images/diceTwo.png");
+    diceFaces[2] = new QPixmap(":/images/diceThree.png");
+    diceFaces[3] = new QPixmap(":/images/diceFour.png");
+    diceFaces[4] = new QPixmap(":/images/diceFive.png");
+    diceFaces[5] = new QPixmap(":/images/diceSix.png");
 }
 
-// Generates random number between 1 and 6
+// Generates random number between 0 and 5
 static int generateRandomNumber()
 {
     std::random_device rd;
@@ -23,49 +30,22 @@ static int generateRandomNumber()
     while((n = gen()) > std::mt19937::max() - (std::mt19937::max() - 5) % 6) {
         // bad value retrieved so get next one
     }
-    return ((n % 6) + 1);
+    return (n % 6);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete diceOne;
-    delete diceTwo;
-    delete diceThree;
-    delete diceFour;
-    delete diceFive;
-    delete diceSix;
+    for(int i = 0; i < 6; ++i) {
+        delete diceFaces[i];
+    }
 }
-
 
 void MainWindow::on_pushButton_clicked()
 {
-    int rndNumber = generateRandomNumber();
     QLabel * dice = ui->outputLabel;
-    switch(rndNumber) {
-    case 1:
-        dice->setPixmap(*diceOne);
-        break;
-    case 2:
-        dice->setPixmap(*diceTwo);
-        break;
-    case 3:
-        dice->setPixmap(*diceThree);
-        break;
-    case 4:
-        dice->setPixmap(*diceFour);
-        break;
-    case 5:
-        dice->setPixmap(*diceFive);
-        break;
-    case 6:
-        dice->setPixmap(*diceSix);
-        break;
-    default:
-        dice->setText("Bad number generated.");
-        break;
-    }
-    ui->outputLabel->show();
+    int rndNumber = generateRandomNumber();
+    dice->setPixmap(*diceFaces[rndNumber]);
 }
 
 
