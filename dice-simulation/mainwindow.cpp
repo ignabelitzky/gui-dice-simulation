@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
     diceFaces[3] = new QPixmap(":/images/diceFour.png");
     diceFaces[4] = new QPixmap(":/images/diceFive.png");
     diceFaces[5] = new QPixmap(":/images/diceSix.png");
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
 }
 
 // Generates random number between 0 and 5
@@ -39,13 +42,23 @@ MainWindow::~MainWindow()
     for(int i = 0; i < 6; ++i) {
         delete diceFaces[i];
     }
+    delete timer;
+}
+
+void MainWindow::showRandomFaces()
+{
+    timer->start(75);
+}
+
+void MainWindow::stopRandomFaces()
+{
+    timer->stop();
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-    QLabel * dice = ui->outputLabel;
-    int rndNumber = generateRandomNumber();
-    dice->setPixmap(*diceFaces[rndNumber]);
+    QTimer::singleShot(1500, this, SLOT(stopRandomFaces()));
+    showRandomFaces();
 }
 
 
@@ -58,5 +71,12 @@ void MainWindow::on_actionLicense_triggered()
     msgBox.setWindowTitle(title);
     msgBox.addButton(QMessageBox::Ok);
     msgBox.exec();
+}
+
+void MainWindow::onTimeOut()
+{
+    QLabel * dice = ui->outputLabel;
+    int rndNumber = generateRandomNumber();
+    dice->setPixmap(*diceFaces[rndNumber]);
 }
 

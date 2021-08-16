@@ -19,14 +19,17 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void showRandomFaces();
 
 private slots:
     void on_pushButton_clicked();
-
     void on_actionLicense_triggered();
+    void onTimeOut();
+    void stopRandomFaces();
 
 private:
     Ui::MainWindow *ui;
     QPixmap *diceFaces[6];
+    QTimer *timer;
 };
 #endif // MAINWINDOW_H
