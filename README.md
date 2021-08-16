@@ -9,6 +9,8 @@ To compile the GUI Dice Simulator you should open the CMakeList.txt file with QT
 ![Img 2](https://raw.githubusercontent.com/ignabelitzky/gui-dice-simulation/main/dice-simulation/screenshots/screenshot_2.png)
 ![Img 3](https://raw.githubusercontent.com/ignabelitzky/gui-dice-simulation/main/dice-simulation/screenshots/screenshot_3.png)
 
+Here is a [little clip of the program](https://youtu.be/RKCld1lS1OM)
+
 ## Contributing
 This piece of software is far for complete so pull requests are welcome. For major changes, please open an issue first to discuss what you wold like to change.
 
