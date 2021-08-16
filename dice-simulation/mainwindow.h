@@ -28,8 +28,8 @@ private slots:
     void stopRandomFaces();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui = nullptr;
     QPixmap *diceFaces[6];
-    QTimer *timer;
+    QTimer *timer = nullptr;
 };
 #endif // MAINWINDOW_H

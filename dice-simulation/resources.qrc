@@ -7,5 +7,7 @@
         <file>images/diceThree.png</file>
         <file>images/diceTwo.png</file>
         <file>images/dices_icon.png</file>
+        <file>sounds/roll_dice_sound.mp3</file>
+        <file>sounds/roll_dice_sound.wav</file>
     </qresource>
 </RCC>
