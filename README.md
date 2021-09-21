@@ -12,7 +12,10 @@ To compile the GUI Dice Simulator you should open the CMakeList.txt file with QT
 Here is a [little clip of the program](https://youtu.be/RKCld1lS1OM)
 
 ## Contributing
-This piece of software is far for complete so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+This piece of software is far from complete so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## TO-DO
+- Add sound when the dice is rolling.
 
 ## License
 GNU Lesser General Public License v2.1
