@@ -2,7 +2,7 @@
 Simple dice simulator that generates random number between 1 and 6.
 
 ## Getting Started
-To compile the GUI Dice Simulator you should open the CMakeList.txt file with QT Creator and now you can build the app and run on your Linux or Windows machine.
+To compile the GUI Dice Simulator you should open the CMakeList.txt file with QT Creator, build the app and run on your Linux machine.
 
 ### Screenshots
 ![Img 1](https://raw.githubusercontent.com/ignabelitzky/gui-dice-simulation/main/dice-simulation/screenshots/screenshot_1.png)
@@ -12,7 +12,7 @@ To compile the GUI Dice Simulator you should open the CMakeList.txt file with QT
 Here is a [little clip of the program](https://youtu.be/RKCld1lS1OM)
 
 ## Contributing
-This piece of software is far from complete so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+This piece of software is far from being completed so pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## TO-DO
 - Add sound when the dice is rolling.
