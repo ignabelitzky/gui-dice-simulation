@@ -13,6 +13,10 @@ MainWindow::MainWindow(QWidget *parent)
     diceFaces[4] = new QPixmap(":/images/diceFive.png");
     diceFaces[5] = new QPixmap(":/images/diceSix.png");
 
+    diceRollingSound = new QSoundEffect();
+    diceRollingSound->setSource(QUrl::fromLocalFile(":/sounds/roll_dice_sound.wav"));
+    diceRollingSound->setVolume(0.5f);
+
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimeOut()));
 }
@@ -52,10 +56,12 @@ void MainWindow::showRandomFaces()
 void MainWindow::stopRandomFaces()
 {
     timer->stop();
+    diceRollingSound->stop();
 }
 
 void MainWindow::on_pushButton_clicked()
 {
+    diceRollingSound->play();
     QTimer::singleShot(1500, this, SLOT(stopRandomFaces()));
     showRandomFaces();
 }

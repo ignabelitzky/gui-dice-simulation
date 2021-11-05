@@ -7,6 +7,7 @@
 #include <QPixmap>
 #include <QMessageBox>
 #include <QTimer>
+#include <QSoundEffect>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,5 +32,6 @@ private:
     Ui::MainWindow *ui = nullptr;
     QPixmap *diceFaces[6];
     QTimer *timer = nullptr;
+    QSoundEffect * diceRollingSound = nullptr;
 };
 #endif // MAINWINDOW_H

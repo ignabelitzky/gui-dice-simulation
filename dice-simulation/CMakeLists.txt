@@ -26,6 +26,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Multimedia REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -53,6 +54,7 @@ else()
 endif()
 
 target_link_libraries(dice-simulation PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(dice-simulation PRIVATE Qt6::Multimedia)
 
 set_target_properties(dice-simulation PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
